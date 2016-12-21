@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html ng-app="ngrepeatApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var ngrepeatApp = angular.module("ngrepeatApp", []);
+        ngrepeatApp.controller("ngrepeatController", function($scope) {
+            $scope.names = ['Madhavan','Kugan','Tom'];
+        });
+    </script>
+</head>
+<body ng-controller="ngrepeatController">
+<ul>
+    <li ng-repeat="name in names">{{name}}</li>
+</ul>
+</body>
+</html>

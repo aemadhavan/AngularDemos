@@ -66,8 +66,27 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="angularexamples\12QueryandFilters - Copy.html" />
+    <Content Include="angularexamples\16SortFieldWithReverse.html" />
+    <Content Include="angularexamples\20ngroute-templateurl.html" />
+    <Content Include="angularexamples\20contrydetails.html" />
+    <Content Include="angularexamples\20countrylist.html" />
+    <Content Include="angularexamples\19ngroute-template.html" />
+    <Content Include="angularexamples\18formatter.html" />
+    <Content Include="angularexamples\17ngsrc.html" />
+    <Content Include="angularexamples\15SortField.html" />
+    <Content Include="angularexamples\14OrderbyDescending.html" />
+    <Content Include="angularexamples\13Orderby.html" />
+    <Content Include="angularexamples\11http-get with DI.html" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="angularexamples\countries.json" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -77,6 +96,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="angularexamples\01HelloAngular.html" />
+    <Content Include="angularexamples\02TextBox.html" />
+    <Content Include="angularexamples\03TextBoxWithController.html" />
+    <Content Include="angularexamples\04WatchandApply.html" />
+    <Content Include="angularexamples\05ngrepeat.html" />
+    <Content Include="angularexamples\06ngsubmit.html" />
+    <Content Include="angularexamples\07ngclick.html" />
+    <Content Include="angularexamples\10http-get.html" />
+    <Content Include="angularexamples\09table.html" />
+    <Content Include="angularexamples\08jsondata.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />

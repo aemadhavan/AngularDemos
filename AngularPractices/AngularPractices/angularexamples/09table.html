@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html ng-app="jsondataApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("jsondataApp", []);
+        app.controller("jsondataController", function($scope) {
+            $scope.countries = [{ 'name': 'IN', 'population': '1 Billion' },
+                                { 'name': 'SG', 'population': '5 Million' },
+                                { 'name': 'NZ', 'population': '4 Million' }
+                                ];
+        });
+    </script>
+</head>
+<body ng-controller="jsondataController">
+<table>
+    <tr>
+        <th>Country</th><th>Population</th>
+    </tr>
+    <tr ng-repeat="country in countries">
+        <td>{{country.name}}</td>
+        <td>{{country.population}}</td>
+    </tr>
+</table>
+</body>
+</html>

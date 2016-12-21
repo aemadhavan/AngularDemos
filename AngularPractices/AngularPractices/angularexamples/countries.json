@@ -1,0 +1,21 @@
+﻿[
+  {
+    "name": "IN",
+    "population": 100000000,
+    "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/383px-Flag_of_India.svg.png",
+    "GDP":  123456
+
+  },
+  {
+    "name": "SG",
+    "population": 50000000,
+    "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/383px-Flag_of_Singapore.svg.png",
+    "GDP": 123456
+  },
+  {
+    "name": "NZ",
+    "population": 40000000,
+    "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/383px-Flag_of_New_Zealand.svg.png",
+    "GDP": 123456
+  }
+]

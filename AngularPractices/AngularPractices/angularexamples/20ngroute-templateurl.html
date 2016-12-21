@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="../Scripts/angular-resource.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("ngRouteApp", ['ngRoute']);
+
+        app.config(function ($routeProvider) {
+            $routeProvider
+              .when('/', {
+                  templateUrl: '20countrylist.html',
+                  controller: 'countryListController'
+              })
+              .when('/view/:id', {
+                  templateUrl: '20contrydetails.html',
+                  controller: 'countryDetailsController'
+              })
+              .otherwise({
+                  redirectTo: '/'
+              });
+        });
+
+        app.controller('countryListController', function ($scope) {
+        });
+
+        app.controller('countryDetailsController', function ($scope, $routeParams) {
+
+        });
+
+        //app.controller('countryListController', function ($scope, $http) {
+        //    $http.get('countries.json').then(function(data) {
+        //        $scope.countries = data;
+        //    });
+        //});
+
+        //app.controller('countryDetailsController', function ($scope, $routeParams) {
+        //    console.log($routeParams);
+        //});
+    </script>
+</head>
+<body ng-app="ngRouteApp">
+    <a href="#/">index1.html</a>
+    <a href="#/view/2">index2.html</a>
+    <div ng-view>
+    </div>
+  
+</body>
+</html>

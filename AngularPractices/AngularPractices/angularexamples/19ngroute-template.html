@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="../Scripts/angular-resource.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("ngRouteApp", ['ngRoute', 'ngResource']);
+        app.config(function ($routeProvider) {
+            $routeProvider
+              .when('/', {
+                  //templateUrl: '19ngroute02.html',
+                  template: '<ul><li ng-repeat ="country in countries.data">{{country.name}}</li></ul>',
+                  controller: 'countryListController'
+              })
+              .when('/:countryName', {
+                  //templateUrl: '19ngroute03.html',
+                  template: '<h1>Country Details</h1>',
+                  controller: 'countryDetailsController'
+              })
+              .otherwise({
+                  redirectTo: '/'
+              });
+        });
+
+        app.controller('countryListController', function ($scope, $http) {
+            $http.get('countries.json').then(function(data) {
+                $scope.countries = data;
+            });
+        });
+
+        app.controller('countryDetailsController', function ($scope, $routeParams) {
+            console.log($routeParams);
+        });
+    </script>
+</head>
+<body ng-app="ngRouteApp">
+    <a href="#/">Country List</a>
+    <a href="20countrylist.html#/SG">Country Details</a>
+<div ng-view>
+</div>
+  
+</body>
+</html>
