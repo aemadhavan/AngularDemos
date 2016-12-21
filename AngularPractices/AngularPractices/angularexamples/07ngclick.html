@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="ngclickApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("ngclickApp", []);
+        app.controller("ngclickController",
+            function($scope) {
+                $scope.countries = ['IN', 'SG', 'NZ'];
+
+                $scope.addCountry = function() {
+                    $scope.countries.push($scope.newCountry);
+                }
+                $scope.removeCountry = function (dcountry) {
+                    var i = $scope.countries.indexOf(dcountry);
+                    $scope.countries.splice(i, 1);
+                };
+            });
+    </script>
+</head>
+<body ng-controller="ngclickController">
+<ul>
+    <li ng-repeat="country in countries">{{country}} <a href="" ng-click="removeCountry(country)"> remove</a></li>
+</ul>
+<form ng-submit="addCountry()">
+    <input type="text" ng-model="newCountry"/>
+    <input type="submit" value="Add Country"/>
+</form>
+</body>
+</html>

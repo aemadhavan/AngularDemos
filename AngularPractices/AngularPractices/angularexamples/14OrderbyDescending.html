@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="jsondataApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("jsondataApp", []);
+        app.controller("jsondataController",['$scope','$http', function (scope,http) {
+            http.get('countries.json')
+                .then(function(data) {
+                    scope.countries = data;
+                },
+                    function(err) {
+                        alert(err);
+                    });            
+        }]);
+    </script>
+</head>
+<body ng-controller="jsondataController">
+Search : <input type="text" ng-model="query" />
+<table>
+    <tr>
+        <th>Country</th><th>Population</th>
+    </tr>
+    <tr ng-repeat="country in countries.data | filter:query | orderBy:'-name'">
+        <td>{{country.name}}</td>
+        <td>{{country.population}}</td>
+    </tr>
+</table>
+</body>
+</html>

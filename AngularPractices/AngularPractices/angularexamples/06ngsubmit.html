@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html ng-app="ngsubmitApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("ngsubmitApp",[]);
+        app.controller("ngsubmitController", function($scope) {
+            $scope.countries = ["IN", "SG", "NZ"];
+
+            $scope.addCountry = function() {
+                $scope.countries.push($scope.newCountry);
+                $scope.newCountry = "";
+            };
+        });
+    </script>
+</head>
+<body ng-controller="ngsubmitController">
+<ul>
+    <li ng-repeat="country in countries">{{country}}</li>
+</ul>
+<form ng-submit="addCountry()">
+    <input type="text" ng-model="newCountry" />
+    <input type="submit" value="add Country" />    
+</form>
+
+</body>
+</html>
