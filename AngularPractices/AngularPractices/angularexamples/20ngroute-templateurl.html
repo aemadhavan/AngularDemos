@@ -15,7 +15,7 @@
                   templateUrl: '20countrylist.html',
                   controller: 'countryListController'
               })
-              .when('/view/:id', {
+              .when('/view/:countryName', {
                   templateUrl: '20contrydetails.html',
                   controller: 'countryDetailsController'
               })
@@ -25,10 +25,13 @@
         });
 
         app.controller('countryListController', function ($scope) {
+            $http.get("countries.json").then(function(data) {
+                $scope.countries = data;
+            });
         });
 
         app.controller('countryDetailsController', function ($scope, $routeParams) {
-
+            $scope.countryName = $routeParams.countryName;
         });
 
         //app.controller('countryListController', function ($scope, $http) {
@@ -44,7 +47,7 @@
 </head>
 <body ng-app="ngRouteApp">
     <a href="#/">index1.html</a>
-    <a href="#/view/2">index2.html</a>
+    <a href="#/view/SG">index2.html</a>
     <div ng-view>
     </div>
   
